@@ -1,0 +1,96 @@
+// import  { useState,useEffect } from 'react';
+// import Close from "@material-ui/icons/Close";
+// import axios from "axios";
+// const MultipleChoice  = ({id_kuesioner,id,jawaban,setIndex,setJawaban,initOption,setInitOption,initPertanyaanS,setInitPertanyaanS}) => {
+//     const myparam = id;
+//     const [option, setOption] = useState([]);
+//     const [section, setSection] = useState([]);
+//     const [sectionP, setSectionP] = useState([]);
+//     useEffect(() => {
+        
+//         const fetchData = async ()=>{
+            
+        
+//             axios.get(`http://localhost:5000/kuesioner/options/${myparam}`)
+//               .then(
+//                   response=> {
+//                     //   console.log(response.data.message[0])
+//                     setOption(response.data.message)
+
+//                   }
+//               ).catch(err => console.log(err))
+//           }
+//           fetchData();
+//           let array=[]
+//       }, []);
+    
+    
+//     const pushJawaban = (Oid,Oid_pertanyaan)=>(e)=>{
+//         const arr = [...jawaban];arr[setIndex]=e.target.value;setJawaban(arr)
+//         // setInitOption(initOption.concat(Oid))
+        // axios.get(`http://localhost:5000/options/section/pertanyaan/${Oid_pertanyaan}/${Oid}`)
+        // .then(
+        //     response=> {
+        //     // // console.log(response.data.message)
+        //     // console.log(Oid+"   "+Oid_pertanyaan)
+        //     // console.log(response.data.message)
+        //         if(response.data.message.length !== 0){
+                    // const found = initOption.find(element => element == Oid_pertanyaan);
+                    // if(found == undefined){
+                    //     setInitOption(initOption.concat(Oid_pertanyaan))
+                    // }
+                    // const found1 = initOption.indexOf(Oid_pertanyaan);
+                    // if(found1 !== -1){
+                    //     initPertanyaanS[found1] = Oid
+                    //     setInitPertanyaanS(initPertanyaanS)
+                    // }
+                    // if(found == undefined){
+                        
+                    //     setInitPertanyaanS(initPertanyaanS.concat(Oid))
+                    // }
+        //         }
+        //     }
+        // )
+        
+        
+//     }
+//     const renderOption =  (index) => {
+//         if(option[index]){
+//             return(
+//                 <div class="row" style={{marginBottom:"20px"}}>  
+//                     <div class="col-sm-12 col-7">
+//                         <div class="form-control form_name ">
+//                             <div class="form-check">
+//                                 <input class="form-check-input" type="radio" name={option[index].id_pertanyaan} id="exampleRadios1" value={option[index].option} onClick={pushJawaban(option[index].id,option[index].id_pertanyaan)} required/>
+//                                 <label class="form-check-label" for="exampleRadios1">
+//                                     <p>{option[index].option}</p>
+//                                 </label>
+//                             </div>
+//                         </div>
+//                     </div>
+                    
+//                 </div> 
+//                 // <h1>{myparam}</h1>
+                
+//             )
+//         }
+//     }
+//     return(
+//         <>
+//             {/* <h1>{jawaban}</h1> */}
+//             {
+//                 option.map((que,i)=>(
+//                     <>
+//                         {renderOption(i)}  
+                        
+//                     </>
+                    
+//                 ))
+//             }
+            
+//         </>
+//     )
+// }
+
+
+// export default MultipleChoice;

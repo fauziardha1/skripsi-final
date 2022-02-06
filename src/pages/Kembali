@@ -1,0 +1,83 @@
+// console.log(jawaban)
+        // if(indexButton == 1){
+        //     console.log("1")
+        //     var sum = indexButton-1
+        //     setIndexButton(sum)
+        //     setDisplay(0)
+        //     setInitP(defaultPertanyaan)
+        // }else if(indexButton != -1){
+        // var sum = indexButton-1
+        // setIndexButton(sum)
+        // axios.get(`http://localhost:5000/options/section/pertanyaan/${initOption[0]}/${initPertanyaanS[0]}`)
+        //             .then(
+        //             response=> {
+        //                 if(response.data.message.length !== 0){
+                            
+        //                     axios.get(`http://localhost:5000/kuesioner/pertanyaan/section/${response.data.message[0].section}`)
+        //                     .then(
+        //                         result=>{
+        //                             console.log(result)
+        //                             setInitP(result.data.message);
+        //                             setDisplay(2)
+        //                             setInitOption(initOption)
+        //                             setInitPertanyaanS(initPertanyaanS)
+                                    
+        //                         }
+        //                     )
+        //                 }else{
+        //                     var clean = pertanyaan.filter((arr, index, self) =>
+        //                     index === self.findIndex((t) => (t.section === arr.section )))
+                        
+
+
+        //                     axios.get(`http://localhost:5000/kuesioner/section/${myparam}`)
+        //                     .then(
+        //                         result=>{
+        //                             var idx=0
+        //                             for(let a = 0 ; a < clean.length ; a++){
+        //                                 if(clean[a].section == initP[0].section){
+        //                                     idx = a-1
+        //                                 }
+        //                             }
+        //                             var sect = -1
+        //                             for(let a = 0 ; a < result.data.message.length ; a++){
+        //                                 for(let b = idx ; b > -1 ; b--){
+        //                                     if(clean[b].section != result.data.message[a].section){
+        //                                         sect = clean[b].section;
+        //                                         break;
+        //                                     }
+        //                                 }   
+        //                             }
+
+                                    
+        //                             // console.log(sect)
+        //                             axios.get(`http://localhost:5000/section/pertanyaan/${sect}/${myparam}`).then(
+        //                                 response=>{
+        //                                     if(response.data.message.length != 0 ){
+        //                                         setInitP(response.data.message)
+        //                                         setDisplay(2)
+        //                                     }else{
+        //                                         setDisplay(1)
+        //                                     }
+        //                                 }
+        //                             )
+                            
+                                    
+        //                         }
+        //                     )
+        //                 }
+                            
+            
+        //             }
+        //         )
+        //     }
+        // // const arrOption = initPertanyaanS;
+        // // const arrPertanyaan = initOption;
+        // // arrOption.pop()
+        // // arrPertanyaan.pop()
+        // // if(arrOption.length == 0 && arrPertanyaan == 0){
+        // //     setDisplay(0)
+        // //     setInitP(defaultPertanyaan)
+        // // }else{
+
+        // // }

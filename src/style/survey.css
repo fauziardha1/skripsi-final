@@ -1,0 +1,98 @@
+.form_name{
+    border:none;
+    outline:none;
+    resize:vertical;
+    color: #202124;
+  }
+  .form_name:focus{
+    border-bottom: 1px solid #202124;
+}
+.pages{
+  /* position: relative; */
+  height: 100%;
+             background-color: red;
+  /* height: 50px; */
+}
+
+
+.form_litle{
+  border:none;
+  outline:none;
+  resize:vertical;
+  /* color: #202124; */
+}
+.form_litle:focus{
+  /* border-bottom: 1px solid #202124; */
+}
+.form_litle::placeholder {
+  /* color: #202124; */
+  opacity: 1;
+}
+  .form_title{
+    border:none;
+    outline:none;
+    font-family: 'Google Sans',Roboto,Arial,sans-serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: #202124;
+      /* width:120px; */
+  }
+  .form_title::placeholder {
+    color: #202124;
+  }
+  .vertical-scrollable> .row {
+    position: absolute;
+    top: 120px;
+    bottom: 100px;
+    left: 180px;
+    width: 50%;
+    overflow-y: scroll; 
+  }
+  .form_title:focus{
+    border-bottom: 1px solid #202124;
+  }
+  .form_name::placeholder {
+    color: #202124;
+    opacity: 1;
+  }
+  
+  .form_title_grafik{
+    border:none;
+    outline:none;
+    font-family: 'Google Sans',Roboto,Arial,sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #202124;
+      /* width:120px; */
+  }
+  /* .form_title_grafik::placeholder {
+    color: #202124;
+  } */
+  /* .form_title_grafik:focus{
+    border-bottom: 1px solid #202124;
+  } */
+  
+  
+  
+  
+  
+  
+
+  #mybutton {
+    position: fixed;
+    bottom:100px;
+    right: 10px;
+  }
+.card_adding{
+  position:fixed;
+
+}
+.card_adding:focus{
+  position:fixed;
+  /* margin-bottom: 0px; */
+  bottom: -4px;
+}
+
+
+
+

@@ -1,0 +1,121 @@
+console.log(jawaban)
+    //    if(jawaban.length >= indexJawaban){
+    //         if(initOption[indexButton] !== undefined && initPertanyaanS[indexButton]!== undefined){
+    //             axios.get(`http://localhost:5000/options/section/pertanyaan/${initOption[indexButton]}/${initPertanyaanS[indexButton]}`)
+    //                 .then(
+    //                 response=> {
+    //                         console.log(response.data.message)
+    //                     if(response.data.message.length !== 0){
+    //                         axios.get(`http://localhost:5000/kuesioner/pertanyaan/section/${response.data.message[0].section}`)
+    //                         .then(
+    //                             result=>{
+    //                                 setInitP(result.data.message);
+    //                                 setDisplay(2)
+    //                                 setInitOption(initOption)
+    //                                 setInitPertanyaanS(initPertanyaanS)
+                                    
+    //                                 setIndexButton(indexButton+1)
+    //                             }
+    //                         )
+    //                     }else{
+                                
+    //                         var clean = pertanyaan.filter((arr, index, self) =>
+    //                         index === self.findIndex((t) => (t.section === arr.section )))
+    //                         console.log(clean)
+                        
+
+
+    //                         axios.get(`http://localhost:5000/kuesioner/section/${myparam}`)
+    //                         .then(
+    //                             result=>{
+    //                                 var idx=0
+    //                                 for(let a = 0 ; a < clean.length ; a++){
+    //                                     if(clean[a].section == initP[0].section){
+    //                                         idx = a+1
+    //                                     }
+    //                                 }
+    //                                 var sect = -1
+    //                                 for(let a = 0 ; a < result.data.message.length ; a++){
+    //                                     for(let b = idx ; b < clean.length ; b++){
+    //                                         if(clean[b].section != result.data.message[a].section){
+    //                                             sect = clean[b].section;
+    //                                             break;
+    //                                         }
+    //                                     }   
+    //                                 }
+                                    
+    //                                 console.log(sect)
+    //                                 axios.get(`http://localhost:5000/section/pertanyaan/${sect}/${myparam}`).then(
+    //                                     response=>{
+    //                                         if(response.data.message.length != 0 ){
+    //                                             setInitP(response.data.message)
+    //                                             setDisplay(2)
+    //                                             setIndexButton(indexButton+1)
+    //                                         }else{
+    //                                             setDisplay(1)
+    //                                         }
+                                            
+    //                                     }
+    //                                 )
+                            
+                                    
+    //                             }
+    //                         )  
+    //                     }
+    //                 })
+    //         }else{
+    //             var clean = pertanyaan.filter((arr, index, self) =>
+    //             index === self.findIndex((t) => (t.section === arr.section )))
+                
+
+
+    //             axios.get(`http://localhost:5000/kuesioner/section/${myparam}`)
+    //             .then(
+    //                 result=>{
+    //                     var idx=0
+    //                     for(let a = 0 ; a < clean.length ; a++){
+    //                         if(clean[a].section == initP[0].section){
+    //                             idx = a+1
+    //                         }
+    //                     }
+    //                     var sect = -1
+    //                     for(let a = 0 ; a < result.data.message.length ; a++){
+    //                         for(let b = idx ; b < clean.length ; b++){
+    //                             if(clean[b].section != result.data.message[a].section){
+    //                                 sect = clean[b].section;
+    //                                 break;
+    //                             }
+    //                         }   
+    //                     }
+                        
+    //                     axios.get(`http://localhost:5000/section/pertanyaan/${sect}/${myparam}`).then(
+    //                         response=>{
+    //                             if(response.data.message.length != 0 ){
+    //                                 setInitP(response.data.message)
+    //                                 setDisplay(2)
+    //                                 setIndexButton(indexButton+1)
+    //                             }else{
+    //                                 setDisplay(1)
+    //                             }
+    //                         }
+    //                     )
+                
+                        
+    //                 }
+    //             )  
+    //         }
+    //     }else{
+    //         var clean = pertanyaan.filter((arr, index, self) =>
+    //             index === self.findIndex((t) => (t.section === arr.section )))
+    //         axios.get(`http://localhost:5000/section/pertanyaan/${clean[1].section}/${myparam}`).then(
+    //             response=>{
+    //                 if(response.data.message.length != 0 ){
+    //                     setInitP(response.data.message)
+    //                     setDisplay(2)
+    //                     setIndexButton(indexButton+1)
+    //                 }else{
+    //                     setDisplay(1)
+    //                 }
+    //             }
+    //         )    
+    //     }

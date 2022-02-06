@@ -1,0 +1,305 @@
+// import  { useState,useEffect } from 'react';
+// import SectionDashboard from '../components/SectionDashbord';
+// import SideBarAdmin from '../components/template/SideBarAdmin';
+// import HeaderAdmin from '../components/template/HeaderAdmin';
+// import ModalPenyebaran from '../components/ModalPenyebaran';
+// import ModalKarakteristik from '../components/ModalKarakteristik';
+
+
+// import "../style/survey.css"
+// import Title from '../components/form_kuesioner/Title';
+// import Close from "@material-ui/icons/Close";
+// import Radio from '@material-ui/icons/RadioButtonChecked';
+// import ShortText from "@material-ui/icons/ShortText";
+// import Pharagraph from "@material-ui/icons/Subject";
+// import { CheckBox } from '@material-ui/icons';
+// import MultipleChoice from '../components/form_kuesioner/MultipleChoice';
+// import ShortAnswer from '../components/form_kuesioner/ShortAnswer';
+// import Checkboxes from '../components/form_kuesioner/Checkboxes';
+// import TextAnswer from '../components/form_kuesioner/TextAnswer';
+// import { Link, useHistory ,useLocation} from 'react-router-dom'
+// import axios from "axios";
+
+
+// const Form = ({setToken,token}) => {
+//     const location = useLocation();
+//     const myparam = location.state.id;//id_kuesioner
+//     const [pertanyaan,setPertanyaan] = useState([])
+//     const [jawaban, setJawaban] = useState([]);
+//     const [section , setSection] = useState([])
+//     const [initPertanyaan,setInitPertanyaan] = useState([])
+//     const [defaultPertanyaan,setDefaultPertanyaan] = useState([])
+//     const [display,setDisplay] = useState(0);
+//     const [initOption, setInitOption] = useState([]);
+//     const [initPertanyaanS, setInitPertanyaanS] = useState([]);
+//     const [indexButton,setIndexButton] = useState(0);
+//     const [indexJawaban,setIndexJawaban] = useState(0);
+//     const [initP,setInitP] = useState([]);
+//     // const indexPertanyaan = -1
+//     let history = useHistory();
+//     useEffect(() => {
+//         const fetchData = async ()=>{
+//             var initDataSection=[];
+//             var initDataPertanyaan = []
+//             axios.post(`http://localhost:5000/jawaban/mahasiswa/${token}`,{
+//                 id_kuesioner: myparam
+//             })
+//             .then(
+//                 response=> {
+//                     if(response.data.message.id_penyebaran == location.state.id_penyebaran){
+//                         history.push("/list")
+//                     }
+//                 }
+//             ).catch(err => console.log(err))  
+            
+            // axios.get(`http://localhost:5000/options/section/kuesioner/${myparam}`)
+            //     .then(
+            //         result=>{
+            //             if(result.data.message.length!=0){
+            //                 setSection(result);
+            //                 setDisplay(0)
+            //             }else{
+            //                 setDisplay(1)
+            //             }
+                        
+            //         }
+            //     )
+//             axios.get(`http://localhost:5000/kuesioner/pertanyaan/${myparam}`)
+//               .then(
+//                   response=> {
+//                     // axios.get(`http://localhost:5000/options/section/kuesioner/${myparam}`)
+//                     // .then(
+//                     //     result=> {
+//                         setInitPertanyaan(response.data.message)
+//                             // for(var a = 0 ; a < result.data.message.length; a++){
+//                                 initDataPertanyaan = response.data.message.filter((e, i) => {
+//                                     return response.data.message[i].section == response.data.message[0].section
+//                                 })
+//                             //   }
+//                             setIndexJawaban(initDataPertanyaan.length)
+//                             setPertanyaan(response.data.message)
+//                             setInitP(initDataPertanyaan)
+//                              setDefaultPertanyaan(initDataPertanyaan)                //     }
+                    
+//                   }
+//               ).catch(err => console.log(err))
+              
+//           }
+//           fetchData();
+          
+//       }, []);
+//       const choice=(i)=>{
+//         if(pertanyaan[i].type == "pharagraph"){
+//             return(<TextAnswer id={pertanyaan[i].id} jawaban={jawaban} setIndex={i} setJawaban={setJawaban} type="text"/> )
+//         }else if(pertanyaan[i].type == "radio"){
+//             return(
+//             <>
+//                 <MultipleChoice id_kuesioner={myparam} id={pertanyaan[i].id} jawaban={jawaban} setIndex={i} setJawaban={setJawaban} pertanyaan={initPertanyaan} initOption={initOption} setInitOption={setInitOption} initPertanyaanS={initPertanyaanS} setInitPertanyaanS={setInitPertanyaanS}/>
+                
+//             </>
+//             )
+//         }else if(pertanyaan[i].type == "short"){
+//             return(<ShortAnswer id={pertanyaan[i].id} jawaban={jawaban} setIndex={i} setJawaban={setJawaban} type="short"/>)
+//         }else if(pertanyaan[i].type == "check"){
+//             return(<Checkboxes id={pertanyaan[i].id} jawaban={jawaban} setIndex={i} setJawaban={setJawaban} type="short" />  )
+//         }
+        
+//       }
+//       const quest  =() => {
+//           var  data = []
+//           var boolean = true
+//           var indexing = 0;
+//         for(let a = 0 ; a < initP.length;a++){        
+//             for(let b = 0 ; b < pertanyaan.length;b++){
+//                 if(pertanyaan[b].id == initP[a].id ){
+//                     boolean = false;
+//                     indexing = b 
+//                     // if(pertanyaan){    
+//                         // return(
+//                         data.push(
+//                         <div class="card">
+//                             <div class=" card-header border-0">
+                                                
+//                                 <div class="row">  
+//                                     <div class="col-sm-12 col-7">
+//                                         <div class="form-group">
+//                                             <p class="form-control form_name form_title"> {pertanyaan[b].pertanyaan}</p>
+//                                         </div>
+//                                     </div>
+                                    
+//                                 </div>
+//                                 {choice(b)}
+//                             </div>
+//                         </div>
+//                         )
+//                         // )
+//                     // }
+//                 }
+//             }
+//         }
+//         if(boolean){
+//             data.push(
+//                 <h1>bisa dong</h1>
+//                 )
+//         }
+                    
+//         return data
+//     }
+//     const clear=()=>{
+//         window.location.reload();
+//     }
+
+    // const clickKembali = ()=>{
+    //     const arrOption = initPertanyaanS;
+    //     const arrPertanyaan = initOption;
+    //     arrOption.pop()
+    //     arrPertanyaan.pop()
+    //     if(arrOption.length == 0 && arrPertanyaan == 0){
+    //         setDisplay(0)
+    //         setInitP(defaultPertanyaan)
+    //     }
+    // }
+    // const clickBerikutnya = ()=>{
+    //     console.log(indexJawaban)
+    //     console.log(jawaban.length)
+    //     // console.log(initOption[indexButton] +"sapi"+ initPertanyaanS[indexButton])
+    //     if(jawaban.length >= indexJawaban){
+    //         if(initOption[indexButton] !== undefined && initPertanyaanS[indexButton]!== undefined){
+    //             axios.get(`http://localhost:5000/options/section/pertanyaan/${initOption[indexButton]}/${initPertanyaanS[indexButton]}`)
+    //                 .then(
+    //                     response=> {
+    //                         if(response.data.message.length !== 0){
+    //                             axios.get(`http://localhost:5000/kuesioner/pertanyaan/section/${response.data.message[0].section}`)
+    //                             .then(
+    //                                 result=>{
+    //                                     setInitP(result.data.message);
+    //                                     setDisplay(2)
+    //                                 }
+    //                             )
+    //                         }else{
+    //                             console.log(response)
+    //                             setInitP("")
+    //                             setDisplay(false)
+    //                         }
+                            
+            
+    //                 }
+    //             )
+    //         }else{
+    //             console.log("wow")    
+    //         }
+    //     }else{
+    //         console.log("wow")
+    //     }
+    // }
+
+//     const simpanJAwaban = async (e) => {
+//         e.preventDefault();
+//         const array =[]
+//         for(let a = 0 ; a < pertanyaan.length;a++){
+//             if(jawaban[a] == ""){
+//                 return
+//             }
+//             array.push({
+//                 id_penyebaran: location.state.id_penyebaran,
+//                id_mahasiswa : token,
+//                id_kuesioner:myparam,
+//                id_pertanyaan: pertanyaan[a].id,
+//                jawaban : jawaban[a]
+               
+//             })
+//         }
+//         await axios.post('http://localhost:5000/jawaban',array)
+//         .then((response) => {
+//             alert(response.data.message)
+//             }) ;
+//           history.push("/list")
+        
+//     }   
+//     const test=()=>{
+        
+//     }
+    
+    // const displaySubmit =()=>{
+    //     if(display == 0){
+    //         return(
+    //             <div class=" row">
+    //                 <div class="col-6">
+    //                 <button type="button" onClick={clickBerikutnya}class="btn btn-white">Selanjutnya</button>
+    //                     {/* <button onClick={clickBerikutnya} class="btn btn-white">Berikutnya</button> */}
+    //                 </div>
+    //                 <div class="col-6 text-right">
+    //                     <button onClick={clear} class="btn btn-secondary">Hapus Jawaban</button>
+    //                 </div>
+    //             </div>
+    //         )
+    //     }else if(display == 2 ){
+    //         return(
+    //             <div class=" row">
+    //                 <div class="col-6">
+    //                 <button type="button" onClick={clickKembali}class="btn btn-white">Kembali</button>
+    //                 <button type="button" onClick={clickBerikutnya}class="btn btn-white">Selanjutnya</button>
+                    
+    //                     {/* <button onClick={clickBerikutnya} class="btn btn-white">Berikutnya</button> */}
+    //                 </div>
+    //                 <div class="col-6 text-right">
+    //                     <button onClick={clear} class="btn btn-secondary">Hapus Jawaban</button>
+    //                 </div>
+    //             </div>
+    //         )
+    //     }
+    //     else{
+    //         return(
+    //             <div class=" row">
+    //                 <div class="col-6">
+    //                     <button type="submit" value="Submit"  class="btn btn-primary">Kirim</button>
+    //                 </div>
+    //                 <div class="col-6 text-right">
+    //                     <button onClick={clear} class="btn btn-secondary">Hapus Jawaban</button>
+    //                 </div>
+    //             </div>
+    //         )
+    //     }
+    // }
+//     return(
+//         <>
+//         <div id="wrapper">
+//             <SideBarAdmin class1="nav-link active"
+//                     class2="nav-link "
+//                     class3="nav-link"
+//             />
+//             <div class="main-content" id="panel">
+//                 <HeaderAdmin setToken={setToken} token={token}/>
+//                 <SectionDashboard />
+//                 <div class="header bg-primary pb-6">
+//                     <div class="container-fluid">
+//                         <div class="header-body">
+                            
+//                         </div>
+//                     </div>
+//                 </div>
+//                 <div class="container-fluid mt--4">
+//                     <div class=" row mb-5">
+//                         <div class="col-12">
+//                             <Title
+//                             id={myparam}
+//                             />
+//                             <h1>{initOption[0] +" sapi "+ initPertanyaanS[0]}</h1>
+//                             <form  onSubmit={ simpanJAwaban }>
+//                             {
+//                                 quest()
+//                             }
+//                             {displaySubmit()}    
+//                             </form>                        
+//                         </div>
+                        
+//                     </div>
+//                 </div>
+//             </div>    
+//         </div>
+//     </>
+//     )
+// }
+
+  
+//   export default Form;
